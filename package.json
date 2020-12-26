@@ -1,0 +1,10 @@
+{
+  "name": "copy-random-files",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
+  "scripts": {
+  },
+  "author": "SokolovDADeveloper",
+  "license": "MIT"
+}

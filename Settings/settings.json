@@ -1,0 +1,7 @@
+{
+  "directoriesSourcePaths": [""],
+  "targetDirectory": "",
+  "maxFilesTargetDirectory": 200,
+  "percentageOldTimeFiles": 40,
+  "percentageCopyOldTimeFiles": 20
+}
