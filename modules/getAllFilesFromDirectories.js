@@ -23,9 +23,10 @@ function isFile (fileName) {
 function getAllFilesFromDir (dirPath) {
     const files = fs.readdirSync(dirPath).map(fileName => {
      return `${dirPath}\\${fileName}`}).filter(isFile);
+    return files;
 };
 
-module.exports = function getAllFilesFromDirectories(directoriesPaths){
+function getAllFilesFromDirectories(directoriesPaths) {
 
     const existDirs = getExistDirectories(directoriesPaths);
 
@@ -33,3 +34,5 @@ module.exports = function getAllFilesFromDirectories(directoriesPaths){
         return acc.concat( getAllFilesFromDir(dirPath))
     },[]);
 }
+
+module.exports = getAllFilesFromDirectories;

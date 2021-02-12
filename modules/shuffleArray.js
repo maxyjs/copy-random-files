@@ -17,13 +17,3 @@ function shuffleArray(arr) {
 };
 
 module.exports = shuffleArray;
-
-if (require.main === module) {
-    test();
-}
-
-function test(){
-    const testArr = [1,2,3,4,5,6,7,8,9];
-    const result = shuffleArray(testArr);
-    console.log ( "result test: ", result);
-}

@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-function checkExistDirectorySync(dirPath) {
+function checkExistDirectory(dirPath) {
 
        const exist = fs.existsSync(dirPath);
         if ( exist ) {
@@ -11,8 +11,8 @@ function checkExistDirectorySync(dirPath) {
         }
 }
 
-function targetDirCountFiles(dirPath){
-    const isExistDir = checkExistDirectorySync(dirPath);
+function targetDirCountFiles(dirPath) {
+    const isExistDir = checkExistDirectory(dirPath);
     if (isExistDir) {
         const files = fs.readdirSync(dirPath);
         const totalFiles = files.length ? files.length : 0;
@@ -20,11 +20,10 @@ function targetDirCountFiles(dirPath){
     }
 }
 
-function calculateNumberFilesToCopy(targetDir, maxFilesTargetDirectory){
+function countFilesToCopy(targetDir, maxFilesTargetDirectory) {
     const totalFiles = targetDirCountFiles(targetDir);
     const countedFilesToCopy = maxFilesTargetDirectory > totalFiles ? maxFilesTargetDirectory - totalFiles : 0;
     return countedFilesToCopy;
 }
 
-module.exports = calculateNumberFilesToCopy;
-
+module.exports = countFilesToCopy;
